@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Unica+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --field-font: 20px;
+    /* Color Palette */
+    --background-pink: #ffebf5;
+    --background-blue: #2D2B6D;
+    --pink-500: #FE0B81;
+    --pink-350: #FE79B9;
+    --pink-100: #FFABC2;
+    --blue-500: #003E60;
+    --blue-350: #068D8D;
+    --blue-100: #B9E4E9;
+}
+
+body{
+    height: 100%;
+    font-family: 'Roboto', sans-serif !important;
+    background-color: var(--pink-100);
+}
+
+/* ::selection{
+  color: #000;
+  background: #fff; */
+
+.navigation-menu{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 10px 50px;
+  justify-content: space-between;
+  background-color: var(--background-pink);
+  box-shadow: 0px 0px 10px 0px #00000059;
+}
+
+.navigation-menu .logo-name{
+  font-family: 'Cedarville Cursive', cursive !important;
+  font-weight: bolder;
+  font-size: 35px;
+  position: relative;
+  margin-top: -10px;
+  color: var(--blue-500);
+}
+
+.navigation-menu a:link,
+.navigation-menu a:visited,
+.navigation-menu a:active{
+  text-decoration: none;
+  text-decoration: none;
+  color: var(--blue-500);
+  font-weight: bolder;
+  
+}
+
+.nav-links{
+  display: flex;
+  gap: 6vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  font-size: 18px;
+  transition: .1s ease-in-out;
+}
+
+.nav-links a{
+  padding: 3px 0px;
+}
+
+.nav-links a:hover, .nav-links a:focus-within{
+  color: black;
+  border-bottom: 4px solid var(--pink-500);
+  transition: .1s ease-in-out;
+}
+
+header{
+  height: 88vh;
+  position: relative;
+  background-color: var(--pink-100);
+}
+
+.bgphoto-container{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.bgphoto-container img{
+  width: 70%;
+  filter: brightness(78%);
+  transition: all 0.3s ease 0s;
+}
+
+.header-content-container{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 60px;
+  font-family: 'Poppins',sans-serif !important;
+}
+
+::selection{
+  color: var(--blue-500);
+  background: rgba(255, 255, 255, 0.466);
+  text-shadow: none;
+}
+
+.header-content{
+  line-height: 75px;
+  /* color: #ade7ee; */
+  color: white;
+  text-shadow: 0px 2px 0px var(--blue-500);
+  font-size: 65px;
+  font-weight: bolder;
+  padding: 0px 20px;
+}
+
+.header-buttons-container{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.header-buttons-container a,
+.header-buttons-container a:link,
+.header-buttons-container a:visited,
+.header-buttons-container a:active{
+  text-decoration: none;
+  color: white;
+}
+
+.header-button{
+  height: 55px;
+  width: 170px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+  border: 2px solid white;
+  border-image: initial;
+  padding: 0 10px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease 0s;
+}
+
+.header-buttons-container #watch-button{
+  background-color: var(--blue-500);
+  border: 2px solid var(--blue-500);
+}
+
+.header-buttons-container #learn-more-button:hover{
+  background-color: var(--pink-500);
+}
+
+@media screen and (max-width: 711px){
+  .bgphoto-container img{
+    width: 100%;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+@media screen and (max-width: 515px){
+  .header-content{
+    font-size: 5vw;
+    line-height: 30px;
+  }
+
+  .header-content-container{
+    padding-top: 95px;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .header-button{
+    transform: scale(.7);
+  }
+
+}

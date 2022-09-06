@@ -1,0 +1,129 @@
+.about-main{
+    margin-top: 15% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: none;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-logo{
+    font-size: 50px !important;
+    pointer-events: none;
+}
+
+.about-content{
+    text-align: justify;
+    text-indent: 5rem;
+    font-size: 20px;
+    color: whitesmoke;
+    line-height: 2rem;
+}
+
+.developers-text{
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin: 15px 0 -15px 0;
+    font-size: 30px;
+    color: var(--blue-500);
+    font-weight: bolder !important;
+}
+
+.dev-profile-content{
+    background-image: url("../imgs/icon.png");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: 250px 45px;
+    background-color: transparent;
+    border: 2px solid var(--mustard);
+    width: auto;
+    border-radius: 20px;
+    box-shadow: 2px 5px 11px 2px #0000005c;
+    transition: all .5s ease-in-out;
+}
+
+.dev-profile-container{
+    display: flex;
+    gap: 19px;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 60px;
+    padding-top: 10px;
+}
+
+.dev-profile-container .dev-profile{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 20px 30px 20px 10px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    background-image: linear-gradient(107deg, rgb(255 255 255 / 30%), transparent);
+    
+}
+
+.profile-picture img{
+    width: 1in;
+    border-radius: 50px;
+}
+
+.dev-profile a, .dev-profile a:active, .dev-profile a:visited{
+    color: var(--mustard);
+}
+
+.dev-profile .profile-details{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-items: flex-start;
+}
+
+.profile-details .name{
+    font-weight: bolder;
+    font-size: 20px;
+    color: var(--blue-500);
+}
+
+.profile-details .degree, 
+.profile-details .uep{
+    font-size: 15px;
+    margin-top: -15px;
+    opacity: .8;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0px 0px 2px black;
+}
+
+.profile-details .socials{
+    padding: 20px 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.profile-details .socials a{
+    font-size: 20px;
+    position: absolute;
+    transition: .1s ease;
+    color: var(--blue-500);
+    opacity: .6;
+}
+
+.profile-details .socials a:hover{
+    transform: scale(1.1);
+    color: var(--blue-500);
+    opacity: 1;
+}
+
+@media (max-width: 1000px) {
+    .dev-profile-container{
+        flex-direction: column;
+    }
+}

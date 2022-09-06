@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Unica+One&display=swap');
+
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --field-font: 20px;
+    /* Color Palette */
+    --background-color: #ffebf5;
+    --light-pink: #FE79B9;
+    --hot-pink: #FE0B81;
+    --pink-100: #FFABC2;
+    --blue-500: #003E60;
+    --blue: #2D2B6D;
+}
+
+::selection{
+    color: var(--blue-500) !important;
+    background: #e78eb993 !important;
+    text-shadow: none;
+}
+
+body{
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(90deg, var(--background-color) 40%, white 0);
+}
+
+.main-container{
+    width: 80vw;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0px 0px 20px 3px #00000059;
+    margin: 10vh auto;
+    gap: 20px;
+}
+
+.image-container{
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.image-container img{
+    min-width: 20vw;
+    width: 30vw;
+}
+
+.register-container{
+    background-color: white;
+    padding: 5% 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-title-container .title{
+    padding: 10px 30px;
+    font-size: 30px;
+    color: var(--blue);
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 0;
+}
+
+.scroll-button{
+    background: var(--hot-pink);
+    border: 1px solid var(--blue);
+    padding: 8px 8px !important;
+    border-radius: 50px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    transition: ease-in .2s;
+}
+
+.form-container #scroll-up{
+    top: -40px;
+    visibility: hidden;
+}
+
+#scroll-down{
+    bottom: -45px;
+    visibility: visible;
+}
+
+.scroll-button i{
+    font-size: 1.75vw;
+}
+
+.form-container .registration-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    max-height: 238px;
+    overflow-y: hidden;
+    padding: 15px 0px 0px 0px;
+    position: relative;
+    gap: 30px;
+}
+
+.form-container .registration-form::-webkit-scrollbar{
+    height: 2px;
+    display: none;
+}
+
+.input-field{
+    position: relative;
+}
+
+.input-field input, .input-field select{
+    width: 30vw;
+    color: var(--blue);
+    font-weight: bolder;
+    padding: 20px 15px 10px 15px;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid pink;
+    position: relative;
+}
+
+.input-field select{
+    padding: 15px 15px 5px 10px;
+}
+
+.input-field:nth-child(4) input:nth-child(1) + label{
+    font-size: 13px;
+    top: -10px;
+    color: var(--hot-pink);
+    background-color: #ffffff;
+    width: fit-content;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.input-field .floating-label{
+    position: absolute;
+    display: block;
+    font-weight: bold;
+    font-size: 17px;
+    pointer-events: none;
+    font-weight: bold;
+    top: 20px;
+    left: 10px;
+    opacity: .4;
+    transition: all .1s ease;
+    padding: 0 5px;
+    z-index: 1;
+}
+
+.input-field input:focus ~ .floating-label,
+.input-field input:not(:focus):valid ~ .floating-label,
+.input-field select:focus ~ .floating-label,
+.input-field select:not(:focus):valid ~ .floating-label,
+.input-field #email-field:focus ~ #email-label,
+.input-field #email-field:not(:placeholder-shown) ~ #email-label{
+    font-size: 13px;
+    top: -10px;
+    color: var(--hot-pink);
+    background-color: #ffffff;
+    width: fit-content;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.input-field input:focus-visible{
+    outline: var(--light-pink) auto 1px;
+}
+
+.vali-modal-container-inactive{
+    display: none;
+}
+
+.vali-modal-container-active{
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    display: block;
+    animation-direction: normal;
+    z-index: 1;
+}
+
+.vali-modal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 12px;
+    width: 58ch;
+    border-radius: 5px;
+    background-color: var(--pink-100);
+    box-shadow: 2px 2px 4px 0px #00000059;
+}
+
+.vali-modal p{
+    padding: 20px 10px 20px;
+    color: var(--blue-500);
+    font-weight: bold;
+}
+
+.vali-modal .close-button-container{
+    display: flex;
+    justify-content: center;
+    padding: 20px 10px 20px;
+}
+
+.close-button-container button{
+    font-size: 14px;
+    color: var(--blue-500);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.save-button-container{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.save-button-container button{
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--hot-pink);
+    border: none;
+    font-weight: bolder;
+    color: white;
+    border-radius: 7px;
+    width: 88%;
+    opacity: .7;
+    transition: ease-in .2s;
+}
+
+.save-button-container button:hover{
+    opacity: 1;
+}
+
+#password-strength-container{
+    text-align: right;
+    padding-right: 1px;
+    position: absolute;
+    width: 100%;
+}
+
+.password-strength-inactive{
+    display: none;
+}
+
+.password-strength-active{
+    display: block;
+    font-size: 12px;
+    color: var(--blue-500);
+    opacity: .8;
+    pointer-events: none;
+}
+
+#phone-number {
+    -moz-appearance: textfield;
+}
+#phone-number::-webkit-inner-spin-button {
+    display: none;
+}
+#phone-number::-webkit-outer-spin-button,
+#phone-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.registered-link-container{
+    text-align: center;
+    margin-top: -15px;
+    
+}
+
+.registered-link-container p{
+    font-size: 12px;
+    color: var(--blue-500);
+    
+    
+}
+
+.registered-link-container a:link,
+.registered-link-container a:visited,
+.registered-link-container a:active{
+    text-decoration: none;
+    font-size: 12px;
+    color: var(--hot-pink);
+    padding-bottom: 2px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.registered-link-container a:hover{
+    box-shadow: inset 0px -1px 0px 0px var(--hot-pink);
+    transition: .2s ease-in-out;
+}
+
+/* scrollbars */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+    ::-webkit-datetime-edit-year-field:not([aria-valuenow]),
+    ::-webkit-datetime-edit-month-field:not([aria-valuenow]),
+    ::-webkit-datetime-edit-day-field:not([aria-valuenow]) {
+    color: transparent;
+}
+
+@media screen and (max-width: 670px) {
+    body{
+        background: var(--background-color);
+    }
+    
+    .main-container{
+        display: block;
+    }
+
+    .image-container{
+        display: none;
+    }
+
+    .register-container{
+        padding: 10%;
+    }
+
+    .input-field input, .input-field select{
+        width: 50vw;
+    }
+
+
+    .form-title-container{
+        text-align: center;
+    }
+
+    .scroll-button i{
+        font-size: 12px;
+    }
+
+    #scroll-up{
+        top: -30px !important;
+    }
+
+    #scroll-down{
+        bottom: -40px !important;
+    }
+
+    .vali-modal{
+        width: auto;
+        transform: scale(.9);
+    }
+}
